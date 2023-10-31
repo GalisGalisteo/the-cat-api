@@ -4,7 +4,7 @@ const dogUrl = 'https://api.thedogapi.com/v1/images/search';
 const fetchImg = async (url) => {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error('Error fetching advice');
+        throw new Error('Error fetching data');
     }
     const data = await response.json();
     return data;
