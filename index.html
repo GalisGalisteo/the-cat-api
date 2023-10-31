@@ -12,10 +12,17 @@
 </head>
 
 <body>
-    <div class="container" id="cat-container" style="width:75%; margin: 1rem auto;text-align: center;">
-        <img id="cat-image" src="" alt="un gato">
-        <button id="get-cat" style="margin-top: 1rem;">Nuevo Gato</button>
+    <select name="pet" id="pet">
+        <option value="select">Select Pet</option>
+        <option value="cat">Cats</option>
+        <option value="dog">Dogs</option>
+    </select>
+    <div class="container" id="pet-container" style="width:75%; margin: 1rem auto;text-align: center;">
+        <h2>Please, select a pet.</h2>
+        <img id="pet-image" src="" alt="un gato" style="display: none">
+        <button id="get-pet" style="margin-top: 1rem;">New pet</button>
     </div>
+    <div id="error-container"></div>
 
     <script src="./app.js"></script>
 </body>
