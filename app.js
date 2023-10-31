@@ -18,15 +18,9 @@ height.id = 'height';
 
 const getPet = async (petUrl) => {
     const petContainer = document.querySelector('#pet-container');
+    let getPet;
     try {
-        const getPet = await fetchImg(petUrl);
-        const petImg = document.querySelector('#pet-image');
-        petImg.src = getPet[0].url;
-        petImg.style.display = 'block';
-        width.textContent = `Width: ${getPet[0].width}`;
-        height.textContent = `Height: ${getPet[0].height}`;
-        petContainer.appendChild(width);
-        petContainer.appendChild(height);
+        getPet = await fetchImg(petUrl);
     } catch (error) {
         const errorContainer = document.querySelector('#error-container');
         errorContainer.innerHTML = '';
@@ -34,7 +28,15 @@ const getPet = async (petUrl) => {
         errorMessage.textContent = 'Ups! The pet is hidden, please try again later.';
         errorContainer.appendChild(errorMessage);
         console.error(error);
+        return;
     }
+    const petImg = document.querySelector('#pet-image');
+    petImg.src = getPet[0].url;
+    petImg.style.display = 'block';
+    width.textContent = `Width: ${getPet[0].width}`;
+    height.textContent = `Height: ${getPet[0].height}`;
+    petContainer.appendChild(width);
+    petContainer.appendChild(height);
 }
 
 window.addEventListener('load', () => {
