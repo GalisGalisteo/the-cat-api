@@ -10,30 +10,28 @@ const fetchImg = async (url) => {
     return data;
 }
 
-const width = document.createElement('h2')
+const width = document.createElement('h2');
 width.id = 'width';
-const height = document.createElement('h2')
+const height = document.createElement('h2');
 height.id = 'height';
 
 
 const getPet = async (petUrl) => {
-    const petContainer = document.querySelector('#pet-container')
+    const petContainer = document.querySelector('#pet-container');
     try {
         const getPet = await fetchImg(petUrl);
-        const petImg = document.querySelector('#pet-image')
+        const petImg = document.querySelector('#pet-image');
         petImg.src = getPet[0].url;
-        petImg.style.display = 'block'
+        petImg.style.display = 'block';
         width.textContent = `Width: ${getPet[0].width}`;
         height.textContent = `Height: ${getPet[0].height}`;
-        petContainer.appendChild(width)
-        petContainer.appendChild(height)
-
-
+        petContainer.appendChild(width);
+        petContainer.appendChild(height);
     } catch (error) {
         const errorContainer = document.querySelector('#error-container');
         errorContainer.innerHTML = '';
         const errorMessage = document.createElement('h2');
-        errorMessage.textContent = 'Ups! The pet is hidden, please try again later.'
+        errorMessage.textContent = 'Ups! The pet is hidden, please try again later.';
         errorContainer.appendChild(errorMessage);
         console.error(error);
     }
