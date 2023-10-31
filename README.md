@@ -9,8 +9,17 @@ Web de la [API](https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6Oh
 ## Preguntas previas
 
 1. ¿Porque podemos ver un texto 'un gato' al cargar la app por primera vez?
+
+Por la propiedad "alt" de la img.
+
 2. ¿Cuál es la URL que nos va a proporcionar un gato aleatório?
+
+https://api.thecatapi.com/v1/images/search
+
 3. Describe con exactitud el tipo de dato que devuelve esta API
+
+array
+
 
 ## Ejercicio y evaluación
 
